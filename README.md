@@ -21,3 +21,22 @@ Mensajes de error.
 
 Este código se puede usar para calcular el área y el perímetro de otros rectángulos, o para realizar otras operaciones matemáticas con números.
 
+````Javascript
+ function calcular() {
+      const baseInput = document.getElementById('base');
+      const alturaInput = document.getElementById('altura');
+      const base = parseFloat(baseInput.value);
+      const altura = parseFloat(alturaInput.value);
+
+      if (isNaN(base) || isNaN(altura)) {
+        alert('Ingrese valores numéricos válidos para la base y la altura.');
+        return;
+      }
+
+      const area = base * altura;
+      const perimetro = 2 * (base + altura);
+
+      const resultadoP = document.getElementById('resultado');
+      resultadoP.textContent = `El área del rectángulo es: ${area.toFixed(2)} y el perímetro es: ${perimetro.toFixed(2)}`;
+    }
+```
