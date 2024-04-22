@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calcular área y perímetro de un rectángulo</title>
+</head>
+<body>
+  <label for="base">Ingrese la base del rectángulo:</label>
+  <input type="number" id="base" name="base">
+
+  <label for="altura">Ingrese la altura del rectángulo:</label>
+  <input type="number" id="altura" name="altura">
+
+  <button onclick="calcular()">Calcular</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      const baseInput = document.getElementById('base');
+      const alturaInput = document.getElementById('altura');
+      const base = parseFloat(baseInput.value);
+      const altura = parseFloat(alturaInput.value);
+
+      if (isNaN(base) || isNaN(altura)) {
+        alert('Ingrese valores numéricos válidos para la base y la altura.');
+        return;
+      }
+
+      const area = base * altura;
+      const perimetro = 2 * (base + altura);
+
+      const resultadoP = document.getElementById('resultado');
+      resultadoP.textContent = `El área del rectángulo es: ${area.toFixed(2)} y el perímetro es: ${perimetro.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
